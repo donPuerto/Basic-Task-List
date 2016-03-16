@@ -56,11 +56,8 @@
                 <thead>
                 <tr>
                     <th>Task</th>
-
                 </tr>
-
                 </thead>
-
                 <!-- Table Body -->
                 <tbody>
                     @foreach ($tasks as $task)
@@ -103,8 +100,8 @@
                 <tbody>
                 @foreach ($tasks as $task)
                     <form action="{{ url('task/'.$task->id.'/edit') }}" method="POST">
-                        {!! csrf_field() !!}
-                        {!! method_field('PATCH') !!}
+                        {{ csrf_field() }}
+                        {{ method_field('PATCH') }}
                         <tr>
                             <td>
                                 {{ $task->name }}
@@ -170,8 +167,8 @@
                         <!-- Delete Button -->
                         <td style="text-align: right">
                             <form action="{{ url('task/'.$task->id) }}" method="POST">
-                                {!! csrf_field() !!}
-                                {!! method_field('DELETE') !!}
+                                {{ csrf_field() }}
+                                {{ method_field('DELETE') }}
 
                                 <button type="submit" class="btn btn-danger">
                                     <span class="glyphicon glyphicon-trash"></span> Delete
